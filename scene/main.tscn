@@ -11,6 +11,9 @@ size = Vector2(20, 144)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwbck"]
 size = Vector2(1170, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i21o"]
+size = Vector2(20, 671)
+
 [node name="Main" type="Node2D" unique_id=2055367458]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=974107289]
@@ -40,12 +43,18 @@ offset_right = 10.0
 offset_bottom = 10.0
 color = Color(1, 0.20784314, 1, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1574135094]
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1574135094]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=211759569]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=211759569]
 position = Vector2(575, -8)
 shape = SubResource("RectangleShape2D_fwbck")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=138050610]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall" unique_id=138050610]
 position = Vector2(581, 656)
 shape = SubResource("RectangleShape2D_fwbck")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=2026625663]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1607425913]
+position = Vector2(1159, 328)
+shape = SubResource("RectangleShape2D_7i21o")
