@@ -8,9 +8,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if get_last_slide_collision() != null:
-		var collision = get_last_slide_collision()
-		if collision.get_collider().name == "Wall":
-			direction.y *= -1
-		else:
-			direction.x *= -1
-		#print("Collided with: ", collision.get_collider().name)
+		var normal = get_last_slide_collision().get_normal()
+		direction = direction.bounce(normal)
