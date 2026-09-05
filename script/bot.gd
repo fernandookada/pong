@@ -10,11 +10,18 @@ var target := 0.0
 
 
 func _physics_process(delta:float) -> void:
-	time += delta
-	if time >= delay:
-		time = 0
-		delay = randf_range(0, 0.5)
-		offset = randf_range(-30, 30)
-		 
-	target = ball.global_position.y + offset
-	global_position.y = lerpf(global_position.y, target, speed * delta)
+	var ball_direction = global_position.direction_to(ball.global_position)
+	if ball_direction.y >= 0:
+		velocity.y = 300
+	else:
+		velocity.y = -300
+		
+	move_and_slide()
+	#time += delta
+	#if time >= delay:
+		#time = 0
+		#delay = randf_range(0, 0.5)
+		#offset = randf_range(-40, 40)
+		 #
+	#target = ball.global_position.y + offset
+	#global_position.y = lerpf(global_position.y, target, speed * delta)
