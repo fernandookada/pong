@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var ball: CharacterBody2D = $"../Ball"
 
+var speed := 5
 var delay := 0.5
 var time := 0.0
 var offset := 0.0
@@ -16,4 +17,4 @@ func _physics_process(delta:float) -> void:
 		offset = randf_range(-30, 30)
 		 
 	target = ball.global_position.y + offset
-	global_position.y = lerpf(global_position.y, target, 5 * delta)
+	global_position.y = lerpf(global_position.y, target, speed * delta)
