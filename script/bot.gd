@@ -25,3 +25,7 @@ func _physics_process(delta:float) -> void:
 		 #
 	#target = ball.global_position.y + offset
 	#global_position.y = lerpf(global_position.y, target, speed * delta)
+
+
+func _on_main_game_over():
+	set_physics_process(false)

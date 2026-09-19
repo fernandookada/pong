@@ -12,3 +12,7 @@ func _physics_process(delta: float) -> void:
 		hit_sound.play()
 		var normal = get_last_slide_collision().get_normal()
 		direction = direction.bounce(normal)
+
+
+func _on_main_game_over():
+	speed = 0
